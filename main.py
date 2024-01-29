@@ -9,11 +9,11 @@ import pandas as pd
 os.makedirs("data", exist_ok=True)
 
 st.set_page_config(
-    page_title="LIDA: Automatic Generation of Visualizations and Infographics",
+    page_title="LIDA App Demo",
     page_icon="📊",
 )
 
-st.write("# LIDA: Automatic Generation of Visualizations and Infographics using Large Language Models 📊")
+st.write("# LIDA App")
 
 st.sidebar.write("## Setup")
 
@@ -31,19 +31,7 @@ else:
     display_key = openai_key[:2] + "*" * (len(openai_key) - 5) + openai_key[-3:]
     st.sidebar.write(f"OpenAI API key loaded from environment variable: {display_key}")
 
-st.markdown(
-    """
-    LIDA is a library for generating data visualizations and data-faithful infographics.
-    LIDA is grammar agnostic (will work with any programming language and visualization
-    libraries e.g. matplotlib, seaborn, altair, d3 etc) and works with multiple large language
-    model providers (OpenAI, Azure OpenAI, PaLM, Cohere, Huggingface). Details on the components
-    of LIDA are described in the [paper here](https://arxiv.org/abs/2303.02927) and in this
-    tutorial [notebook](notebooks/tutorial.ipynb). See the project page [here](https://microsoft.github.io/lida/) for updates!.
 
-   This demo shows how to use the LIDA python api with Streamlit. [More](/about).
-
-   ----
-""")
 
 # Step 2 - Select a dataset and summarization method
 if openai_key:
